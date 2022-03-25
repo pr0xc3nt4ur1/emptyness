@@ -5,8 +5,7 @@ rule cs_job_pipe
         author = "Riccardo Ancarani & Jon Cave"
         date = "2020-10-04"
     strings:
-        $pipe = /\\\\\.\\pipe\\[0-9a-f]{7,10}/ ascii wide fullword
-        $guidPipe = /\\\\\.\\pipe\\[0-9a-f]{8}\-/ ascii wide
+        $pipe = /msagent_ce/ ascii wide fullword
     condition:
-        $pipe and not ($guidPipe)
+        $pipe
 }

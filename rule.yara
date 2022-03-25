@@ -5,7 +5,7 @@ rule cs_job_pipe
         author = "Riccardo Ancarani & Jon Cave"
         date = "2020-10-04"
     strings:
-        $pipe = /msagent_ce/ ascii wide fullword
+        $pipe = /msagent_.{1,9}/ ascii wide
     condition:
         $pipe
 }
